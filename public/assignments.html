@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assignments.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: fixes the background image */
+  color: #333;
+  margin: 0;
+  z-index: -1; /* Ensure the background is behind other elements */
+  position: relative; /* Ensure the body has a positioning context */
+  opacity: 0.9;
+}
+  </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+      <!-- Logo and Navigation Menu -->
+      <div class="logo">
+          <!-- Your logo image or text -->
+          Opdrag Tutors
+      </div>
+<!-- Inside the header section -->
+
+
+<nav class="navigation2">
+  <!-- Your navigation links -->
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+      
+  </ul>
+
+</nav>
+<div class="burger-icon" onclick="toggleNavigation()">
+  <i class="fas fa-bars" style="font-size: 24px; color: black;"></i>
+</div>
+  </header>
+  <nav class="navigation">
+      <ul>
+
+      </ul>
+  </nav>
+  <aside class="apply-tutor">
+      <ul class="actions-list">
+        <li><a href="index.html">Home</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+
+
+
+      </ul>
+    </aside>
+
+
+
+    <section id="top-section" class="top-section">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search Assignment">
+        </div>
+    </section>
+
+    <main class="assignments-grid">
+        <!-- Display assignments here dynamically -->
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+    <script src="assignments.js"></script>
+    <script>
+  firebase.analytics();
+  firebase.analytics().setCurrentScreen(window.location.pathname);
+
+      document.addEventListener('DOMContentLoaded', function() {
+  const burgerIcon = document.querySelector('.burger-icon');
+  const aside = document.querySelector('.apply-tutor');
+
+  burgerIcon.addEventListener('click', function(event) {
+      event.stopPropagation(); // Prevent the click event from propagating to the document
+      toggleNavigation();
+  });
+
+  document.addEventListener('click', function(event) {
+      if (!aside.contains(event.target) && !event.target.classList.contains('burger-icon')) {
+          aside.classList.remove('active');
+      }
+  });
+
+  function toggleNavigation() {
+      const nav = document.querySelector('.navigation');
+      aside.classList.toggle('active');
+      nav.classList.toggle('active');
+  }
+});
+</script>
+
+</body>
+</html>

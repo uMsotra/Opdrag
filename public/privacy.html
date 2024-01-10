@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Opdrag Tutors - Assignment Tutoring Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Optional: fixes the background image */
+            color: #333;
+            margin: 0;
+            z-index: -1; /* Ensure the background is behind other elements */
+            position: relative; /* Ensure the body has a positioning context */
+            background-color: #111; /* Darken the background color */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            Opdrag Tutors
+        </div>
+        <nav class="navigation2">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+               
+            </ul>
+        
+        </nav>
+        <div class="burger-icon" onclick="toggleNavigation()">
+            <i class="fas fa-bars" style="font-size: 24px; color: black;"></i>
+          </div>
+            </header>
+            <nav class="navigation">
+                <ul>
+        
+                </ul>
+            </nav>
+            <aside class="apply-tutor">
+                <ul class="actions-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="assignments.html">Find Assignments</a></li>
+                   
+          
+          
+                </ul>
+              </aside>
+        
+
+    <section class="policy-section">
+        <div class="policy-content">
+            <h2>Privacy Policy</h2>
+            <p>At Opdrag Tutors, we are committed to protecting your privacy and handling your personal information responsibly. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website.</p>
+            <h3>Information We Collect</h3>
+            <p>When you visit our website, we may collect various types of information, including:</p>
+            <ul>
+                <li>Personal Information: Name, email address, contact details</li>
+                <li>Usage Data: Browsing activity, IP address, device information</li>
+                <!-- Add more categories as per your data collection -->
+            </ul>
+            <h3>How We Use Your Information</h3>
+            <p>We use the collected information for purposes such as:</p>
+            <ul>
+                <li>Providing and improving our services</li>
+                <li>Customizing user experience</li>
+                <li>Sending relevant updates and notifications</li>
+                <!-- Add more specific points based on your service -->
+            </ul>
+            <p>Your use of our website indicates your acceptance of this Privacy Policy. If you have any questions or concerns, please contact us.</p>
+        </div>
+    </section>
+
+    <section class="terms-section">
+        <div class="terms-content">
+            <h2>Terms of Service</h2>
+            <p>By accessing our website, you agree to comply with these terms and conditions. Please read them carefully before using our services.</p>
+            <h3>Modifications to Terms</h3>
+            <p>We reserve the right to update, modify, or replace any part of these Terms of Service at our sole discretion. It is your responsibility to periodically check for changes.</p>
+            <h3>Access and Use of Our Services</h3>
+            <p>Your access to and use of Opdrag Tutors is conditioned on your acceptance of and compliance with these terms. You agree not to engage in any activities that:</p>
+            <ul>
+                <li>Violate any laws or regulations</li>
+                <li>Infringe upon our intellectual property rights</li>
+                <li>Compromise the security or integrity of our website</li>
+                <li>Infringe with laws of your university or school</li>
+                <li>Involve plagiarism or academic dishonesty</li>
+                <!-- Add more specific terms relevant to your platform -->
+            </ul>
+            <p>If you disagree with any part of these terms, please refrain from using our services.</p>
+        </div>
+    </section>
+    
+    <script>
+        
+
+            document.addEventListener('DOMContentLoaded', function() {
+        const burgerIcon = document.querySelector('.burger-icon');
+        const aside = document.querySelector('.apply-tutor');
+
+        burgerIcon.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent the click event from propagating to the document
+            toggleNavigation();
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!aside.contains(event.target) && !event.target.classList.contains('burger-icon')) {
+                aside.classList.remove('active');
+            }
+        });
+
+        function toggleNavigation() {
+            const nav = document.querySelector('.navigation');
+            aside.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+    });
+    </script>
+
+
+</body>
+</html>
