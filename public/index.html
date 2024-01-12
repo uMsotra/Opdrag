@@ -47,7 +47,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="fixed-header">
         <div class="logo">
             Opdrag Tutors
         </div>
@@ -65,7 +65,7 @@
 
 </nav>
 <div class="burger-icon" onclick="toggleNavigation()">
-    <i class="fas fa-bars" style="font-size: 24px; color: black;"></i>
+    <i class="fas fa-bars" style="font-size: 24px; color: rgb(131, 120, 120);"></i>
   </div>
     </header>
     <nav class="navigation">
@@ -94,15 +94,15 @@
         <form id="assignment-form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="assignmentName">Assignment Name</label>
-                <input type="text" id="assignmentName" name="assignmentName" required>
+                <input placeholder="Enter name of assignment" type="text" id="assignmentName" name="assignmentName" required>
             </div>
             <div class="form-group">
                 <label for="courseCode">Course Code</label>
-                <input type="text" id="courseCode" name="courseCode" required>
+                <input placeholder="Enter course code" type="text" id="courseCode" name="courseCode" required>
             </div>
             <div class="form-group">
                 <label for="university">University</label>
-                <select id="university" name="university" required>
+                <select id="university" name="university" required class="dark-background">
                     <option value="" disabled selected>Select University</option>
                     <option value="UCT">University of Cape Town</option>
                     <option value="SU">Stellenbosch University</option>
@@ -123,7 +123,7 @@
                     <option value="DUT">Durban University of Technology</option>
                     <option value="UNISA">University of South Africa</option>
                     <option value="UMP">University of Mpumalanga</option>
-                    <option value="CPUT">Cape Penesulia* University of Technology</option>
+                    <option value="CPUT">Cape Peninsula University of Technology</option>
                     <option value="UWC">University of Western Cape</option>
                     
                 </select>
@@ -140,7 +140,7 @@
                 <label for="priceOffer">Price Offer (in ZAR)</label>
                 <div style="display: flex; align-items: center;">
                     <span style="margin-right: 5px;">R</span>
-                    <input type="number" id="priceOffer" name="priceOffer" min="0" required>
+                    <input placeholder="Offer for the tutoring" type="number" id="priceOffer" name="priceOffer" min="0" required>
                 </div>
             </div>
            
@@ -203,6 +203,8 @@
             <a href="https://www.instagram.com/matome.mali" target="_blank"><i class="fab fa-instagram fa-3x"></i></a>
             <a href="https://wa.me/27713555024" target="_blank"><i class="fab fa-whatsapp fa-3x"></i></a>
             <a href="tel:+27713555024"><i class="fas fa-phone-alt fa-3x"></i></a>
+            <a href="https://github.com/umsotra" target="_blank"><i class="fab fa-github fa-3x" style="color: #6cc644;"></i></a>
+            <a href="https://twitter.com/umsotra" target="_blank"><i class="fab fa-twitter fa-3x" style="color: #1da1f2;"></i></a>
         </div>
     
         <div class="privacy-policy">

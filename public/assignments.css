@@ -53,6 +53,7 @@ header {
 .search-bar {
     margin: 20px auto;
     max-width: 400px;
+    background-color: #504e4ec0;
 }
 
 #searchInput {
@@ -73,7 +74,7 @@ header {
 
 /* Stylish card styles */
 .assignment-card {
-    background-color: #fff;
+    background-color:  #070707d3;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -87,10 +88,12 @@ header {
 .assignment-card h2 {
     font-size: 20px;
     margin-bottom: 10px;
+    color: #f4f4f4;
 }
 
 .assignment-card p {
     margin-bottom: 8px;
+    color:darkgray;
 }
 
 .pdf-container {
