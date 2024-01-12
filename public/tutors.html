@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assignments.css">
     <link rel="stylesheet" href="styles.css">
-
+    <link rel="stylesheet" href="tutors.css">
+   
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
       body {
         background-image: url('background.jpg');  
@@ -20,71 +22,77 @@
   margin: 0;
   z-index: -1; /* Ensure the background is behind other elements */
   position: relative; /* Ensure the body has a positioning context */
-  opacity: 0.9;
+  opacity: 1;
 }
   </style>
+    <title>Opdrag Tutors</title>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-      <!-- Logo and Navigation Menu -->
-      <div class="logo">
-          <!-- Your logo image or text -->
-          Opdrag Tutors
-      </div>
+
+
+
+  <!-- Header Section -->
+  <header>
+    <!-- Logo and Navigation Menu -->
+    <div class="logo">
+        <!-- Your logo image or text -->
+        Opdrag Tutors
+    </div>
 <!-- Inside the header section -->
 
 
 <nav class="navigation2">
-  <!-- Your navigation links -->
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="tutors.html">Find Tutors</a></li>
-    <li><a href="privacy.html">Privacy Policy</a></li>
-      
-  </ul>
+<!-- Your navigation links -->
+<ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="privacy.html">Privacy Policy</a></li>
+    
+</ul>
 
 </nav>
 <div class="burger-icon" onclick="toggleNavigation()">
-  <i class="fas fa-bars" style="font-size: 24px; color: rgb(131, 120, 120);"></i>
+<i class="fas fa-bars" style="font-size: 24px; color: rgb(131, 120, 120);"></i>
 </div>
-  </header>
-  <nav class="navigation">
-      <ul>
+</header>
+<nav class="navigation">
+    <ul>
 
-      </ul>
-  </nav>
-  <aside class="apply-tutor">
-      <ul class="actions-list">
-        <li><a href="index.html">Home</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-
-
-
-      </ul>
-    </aside>
+    </ul>
+</nav>
+<aside class="apply-tutor">
+    <ul class="actions-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="assignments.html">Find Assignments</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
 
 
 
-    <section id="top-section" class="top-section">
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search Assignment">
+    </ul>
+  </aside>
+
+
+
+  <section id="top-section" class="top-section">
+      <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search Tutor">
+      </div>
+  </section>
+
+
+    <main class="main-content">
+        
+
+    
+    
+        
+    </main>
+    <section class="tutors-container">
+    
+        <div id="tutors" class="tutor-grid">
+            <!-- Tutor listings will be dynamically added here -->
         </div>
     </section>
-
-    <main class="assignments-grid">
-        <!-- Display assignments here dynamically -->
-    </main>
-
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
-    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
-    <script src="assignments.js"></script>
     <script>
-  firebase.analytics();
-  firebase.analytics().setCurrentScreen(window.location.pathname);
-
       document.addEventListener('DOMContentLoaded', function() {
   const burgerIcon = document.querySelector('.burger-icon');
   const aside = document.querySelector('.apply-tutor');
@@ -106,7 +114,13 @@
       nav.classList.toggle('active');
   }
 });
-</script>
 
+      
+  </script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+
+    <script src="tutors.js"></script>
 </body>
 </html>

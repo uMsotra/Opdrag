@@ -106,12 +106,18 @@ const dueDateTime = new Date(dueDate).getTime();
   
   function fetchAndDisplayAllAssignments() {
     assignmentsRef.on('value', (snapshot) => {
-      const assignments = snapshot.val();
-  
-      if (assignments) {
+        const assignments = snapshot.val();
+
         const mainContainer = document.querySelector('.assignments-grid');
         mainContainer.innerHTML = ''; // Clear previous content
-  
+
+        if (!assignments || Object.keys(assignments).length === 0) {
+            // If there are no assignments, display a note
+            const noAssignmentsNote = document.createElement('p');
+            noAssignmentsNote.textContent = 'No assignments available at the moment.';
+            noAssignmentsNote.classList.add('no-assignments-note'); 
+            mainContainer.appendChild(noAssignmentsNote);
+        }else {
         for (let key in assignments) {
           const assignment = assignments[key];
           const remainingDays = calculateRemainingDays(assignment.dueDate);

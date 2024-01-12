@@ -15,31 +15,21 @@ body {
 }
 
 
-/* Header styles */
-header {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0.9;
-}
 
 .logo {
     font-size: 24px;
     font-weight: bold;
 }
 
-.navigation ul {
+.navigation2 ul {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-.navigation li a {
+.navigation2 li a {
     text-decoration: none;
-    color: #333;
+    color: #f7f1f1;
 }
 
 /* Top section styles */
@@ -64,71 +54,58 @@ header {
     border-radius: 5px;
 }
 
-/* Assignments grid styles */
-.assignments-grid {
+/* Main content styles */
+.main-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
-/* Stylish card styles */
-.assignment-card {
-    background-color:  #070707d3;
+/* Stylish card styles for tutors */
+.tutor-tile {
+    background-color: #070707d3;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-.assignment-card:hover {
+.tutor-tile:hover {
     transform: translateY(-5px);
 }
 
-.assignment-card h2 {
+.tutor-info h3 {
     font-size: 20px;
     margin-bottom: 10px;
     color: #f4f4f4;
 }
 
-.assignment-card p {
+.tutor-info p {
     margin-bottom: 8px;
-    color:darkgray;
+    color: darkgray;
 }
 
-.pdf-container {
-    margin-bottom: 15px;
+.tutor-info strong {
+    color: #fff;
 }
 
-.pdf-viewer {
-    width: 100%;
-    height: 200px;
-    border: none;
-    border-radius: 8px;
-}
-
-.view-pdf-link {
+.tutor-info a {
     display: block;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #007bff;
-}
-
-.whatsapp-link {
-    display: block;
+    margin-top: 10px;
     text-decoration: none;
     color: #25d366;
 }
 
-/* Modern style for the no assignments note */
-.no-assignments-note {
-    font-size: 25px;
-    color: #555;
-    text-align: center;
-    margin-top: 20px;
+/* Your other styles can go here */
+
+/* Tutors container styles */
+.tutors-container {
     padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    opacity: 0.7;
+}
+
+.tutor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }

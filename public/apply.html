@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Opdrag Tutors</title>
+
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #333;
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #fff;
+        margin: 0;
+        z-index: -1;
+        position: relative;
+    }
+
+    section {
+        background-color: rgba(0, 0, 0, 0.7); /* Darkened background with opacity */
+        padding: 20px; /* Adjust the padding as needed */
+        border-radius: 10px; /* Optional: Add some border radius for a softer look */
+    }
+</style>
+<style>
+  /* Add this style for the submit button */
+  #button_container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #submit {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50; /* Green background color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #submit:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+</style>
+
+</head>
+<body>
+     
+  <!-- Header Section -->
+  <header>
+    <!-- Logo and Navigation Menu -->
+    <div class="logo">
+        <!-- Your logo image or text -->
+        Opdrag Tutors
+    </div>
+<!-- Inside the header section -->
+
+
+<nav class="navigation2">
+<!-- Your navigation links -->
+<ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="privacy.html">Privacy Policy</a></li>
+    
+</ul>
+
+</nav>
+<div class="burger-icon" onclick="toggleNavigation()">
+<i class="fas fa-bars" style="font-size: 24px; color: rgb(131, 120, 120);"></i>
+</div>
+</header>
+<nav class="navigation">
+    <ul>
+
+    </ul>
+</nav>
+<aside class="apply-tutor">
+    <ul class="actions-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="assignments.html">Find Assignments</a></li>
+      <li><a href="tutors.html">Find Tutors</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+
+
+
+    </ul>
+  </aside>
+
+  <main class="main">
+    <section>
+      <div class="form-container">
+          <h1 class="form-title">Become A Tutor</h1>
+          <form id="application-form">
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <input placeholder="Enter Your Name" type="text" id="name" name="name" maxlength="10" required>
+              </div>
+              <div class="form-group">
+                  <label for="number">Phone Number</label>
+                  <input placeholder="Enter your 10 digit WhatsApp" type="text" id="number" />
+              </div>
+              <div class="form-group">
+                  <label for="subject">Course Code</label>
+                  <input placeholder="Enter course code" type="text" id="subject" />
+              </div>
+              <div class="form-group">
+                  <label for="marks">Final Mark</label>
+                  <input placeholder="Final Mark In Course" min="50" max="100" type="text" id="marks"
+                      maxlength="3" />
+              </div>
+              <div class="form-group">
+                <label for="university">University</label>
+                <select id="university" name="university" required class="dark-background">
+                  <option value="" disabled selected>Select University</option>
+                  <option value="UCT">University of Cape Town</option>
+                  <option value="SU">Stellenbosch University</option>
+                  <option value="UP">University of Pretoria</option>
+                  <option value="WITS">University of the Witwatersrand</option>
+                  <option value="NWU">North-West University</option>
+                  <option value="UKZN">University of KwaZulu-Natal</option>
+                  <option value="UJ">University of Johannesburg</option>
+                  <option value="UL">University of Limpopo</option>
+                  <option value="UNIVEN">University of Venda</option>
+                  <option value="RU">Rhodes University</option>
+                  <option value="UFH">University of Fort Hare</option>
+                  <option value="SU">Sefako Makgatho Health Sciences University</option>
+                  <option value="UFS">University of the Free State</option>
+                  <option value="CUT">Central University of Technology</option>
+                  <option value="TUT">Tshwane University of Technology</option>
+                  <option value="MUT">Mangosuthu University of Technology</option>
+                  <option value="DUT">Durban University of Technology</option>
+                  <option value="UNISA">University of South Africa</option>
+                  <option value="UMP">University of Mpumalanga</option>
+                  <option value="CPUT">Cape Peninsula University of Technology</option>
+                  <option value="UWC">University of Western Cape</option>
+                  
+                  </select>
+              </div>
+              <div id="button_container">
+                  <a id="submit" onclick="save()"><i class="fas fa-thumbs-up"></i> SUBMIT</a>
+              </div>
+          </form>
+      </div>
+  </section>
+    
+   
+  </main>
+
+  
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const burgerIcon = document.querySelector('.burger-icon');
+        const aside = document.querySelector('.apply-tutor');
+
+        burgerIcon.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent the click event from propagating to the document
+            toggleNavigation();
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!aside.contains(event.target) && !event.target.classList.contains('burger-icon')) {
+                aside.classList.remove('active');
+            }
+        });
+
+        function toggleNavigation() {
+            const nav = document.querySelector('.navigation');
+            aside.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+    });
+
+
+</script>
+  
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+  <script src="apply.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+</body>
+</html>

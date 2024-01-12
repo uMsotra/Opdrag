@@ -37,6 +37,12 @@
     margin-left: -20px;
     z-index: 1000; /* Ensure it's on top of other elements */
 }
+#becomeTutorLink {
+        color: #fff; /* Text color */
+        background-color: #4CAF50; /* Background color */
+        padding: 8px 16px; /* Padding to make it visually appealing */
+        border-radius: 5px; /* Optional: Add border radius for a rounded look */
+    }
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -58,8 +64,8 @@
 <nav class="navigation2">
     <ul class="nav-links">
         <li><a href="assignments.html">Find Assignments</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="tutors.html">Find Tutors</a></li>
+        <li><a href="apply.html" id="becomeTutorLink">Become A Tutor</a></li>
         <li><a href="#contact">Contact Developer</a></li>
     </ul>
 
@@ -76,8 +82,8 @@
     <aside class="apply-tutor">
         <ul class="actions-list">
             <li><a href="assignments.html">Find Assignments</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="#about">About Us</a></li>
+            <li><a href="tutors.html">Find Tutors</a></li>
+            <li><a href="apply.html">Become A Tutor</a></li>
             <li><a href="#contact">Contact Developer</a></li>
   
   
@@ -93,8 +99,8 @@
     <section id="assignmentFormSection" class="upload-form" style="display: none;">
         <form id="assignment-form" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="assignmentName">Assignment Name</label>
-                <input placeholder="Enter name of assignment" type="text" id="assignmentName" name="assignmentName" required>
+                <label for="assignmentName">Course Name</label>
+                <input placeholder="Enter name of the course" type="text" id="assignmentName" name="assignmentName" required>
             </div>
             <div class="form-group">
                 <label for="courseCode">Course Code</label>
@@ -130,7 +136,7 @@
             </div>
             <div class="form-group">
               <label for="number">Phone Number</label>
-              <input placeholder="Enter your 10 digit phone" type="text" id="number" maxlength="10"/>
+              <input placeholder="Enter your 10 digit WhatsApp" type="text" id="number" maxlength="10"/>
             </div>
             <div class="form-group">
                 <label for="dueDate">Due Date</label>
@@ -139,8 +145,8 @@
             <div class="form-group">
                 <label for="priceOffer">Price Offer (in ZAR)</label>
                 <div style="display: flex; align-items: center;">
-                    <span style="margin-right: 5px;">R</span>
-                    <input placeholder="Offer for the tutoring" type="number" id="priceOffer" name="priceOffer" min="0" required>
+                    
+                    <input placeholder="How much are you willing to pay?" type="number" id="priceOffer" name="priceOffer" min="0" required>
                 </div>
             </div>
            
@@ -220,6 +226,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+    
 
     <script src="scripts.js"></script>
    
@@ -261,6 +268,8 @@
             nav.classList.toggle('active');
         }
     });
+
+    
     </script>
 
 
